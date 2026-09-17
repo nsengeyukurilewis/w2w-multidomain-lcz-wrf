@@ -208,6 +208,93 @@ so that the workflow can be reproduced with either:
 1. the original production datasets obtained from their providers, or
 2. the small redistributable sample data supplied with this repository.
 
+
+## Code and data sources
+
+This repository implements a domain-native multi-domain preprocessing
+workflow around the established WUDAPT-to-WRF `W2W` package. The repository
+does not replace W2W; it adds domain discovery, structural validation,
+LCZ-coverage validation, automatic LCZ Version 3 fallback, and reproducible
+multi-domain orchestration.
+
+### Upstream W2W software
+
+The workflow uses:
+
+- W2W version 0.6.0
+- Repository: https://github.com/matthiasdemuzere/w2w
+- Citation:
+
+  Demuzere, M., Argüeso, D., Zonato, A., & Kittner, J. (2022).
+  W2W: A Python package that injects WUDAPT's Local Climate Zone
+  information in WRF. Journal of Open Source Software, 7(76), 4432.
+  https://doi.org/10.21105/joss.04432
+
+W2W is distributed under its original MIT license. Users should consult
+the upstream W2W repository for the software license and upstream
+documentation.
+
+### Global LCZ Version 3
+
+The LCZ data used by this workflow originate from the Global Map of Local
+Climate Zones developed by Demuzere et al.
+
+Primary dataset citation:
+
+  Demuzere, M., Kittner, J., Martilli, A., Mills, G., Moede, C.,
+  Stewart, I. D., van Vliet, J., & Bechtel, B. (2022).
+  A global map of local climate zones to support Earth system modelling
+  and urban-scale environmental science.
+  Earth System Science Data, 14, 3835–3873.
+  https://doi.org/10.5194/essd-14-3835-2022
+
+Global LCZ Map:
+
+  https://lcz-generator.rub.de/global-lcz-map
+
+Version 3 Cloud-Optimized GeoTIFF:
+
+  https://lcz-generator.rub.de/cogs/lcz_filter_v3_cog.tif
+
+The pipeline first tests the user-supplied LCZ raster. If it does not
+completely cover all discovered WRF domains, the pipeline can obtain the
+official Global LCZ Version 3 COG and repeat the coverage test.
+
+### Copernicus DEM
+
+The production Seoul preprocessing uses Copernicus DEM GLO-30 as the
+topographic source.
+
+Official data source:
+
+  Copernicus Data Space Ecosystem — Copernicus DEM
+  https://dataspace.copernicus.eu/explore-data/data-collections/
+  copernicus-contributing-missions/collections-description/COP-DEM
+
+Dataset:
+
+  Copernicus DEM GLO-30
+
+The Copernicus DEM is a Digital Surface Model. The official documentation
+identifies GLO-30 as the global 30 m instance.
+
+Users reproducing the production workflow should obtain the data from the
+official Copernicus source and follow its current access and attribution
+requirements.
+
+### This repository
+
+The multi-domain orchestration and validation code in this repository is
+original work by Lewis Nsengeyukuri.
+
+Repository:
+
+  https://github.com/nsengeyukurilewis/w2w-multidomain-lcz-wrf
+
+The upstream W2W package, Global LCZ Map, and Copernicus DEM remain the
+property of their respective authors/providers and are not claimed as
+original work by this repository.
+
 ## Repository structure
 
     .

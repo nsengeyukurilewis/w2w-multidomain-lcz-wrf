@@ -1,0 +1,75 @@
+cff-version: 1.2.0
+title: "Domain-Native Multi-Domain LCZ-to-WRF Preprocessing"
+message: "If you use this software, please cite this repository and the upstream W2W and Global LCZ Map sources documented in the README."
+type: software
+
+authors:
+  - family-names: Nsengeyukuri
+    given-names: Lewis
+    orcid: "https://orcid.org/0009-0004-3132-6051"
+
+repository-code: "https://github.com/nsengeyukurilewis/w2w-multidomain-lcz-wrf"
+
+license: MIT
+
+keywords:
+  - WRF
+  - W2W
+  - Local Climate Zones
+  - LCZ
+  - urban climate
+  - urban canopy
+  - geospatial preprocessing
+  - multi-domain preprocessing
+
+references:
+  - type: software
+    authors:
+      - family-names: Demuzere
+        given-names: Matthias
+      - family-names: Argüeso
+        given-names: Daniel
+      - family-names: Zonato
+        given-names: Andrea
+      - family-names: Kittner
+        given-names: Jonas
+    title: "W2W: A Python package that injects WUDAPT's Local Climate Zone information in WRF"
+    year: 2022
+    journal: "Journal of Open Source Software"
+    volume: 7
+    issue: 76
+    pages: 4432
+    doi: "10.21105/joss.04432"
+    repository-code: "https://github.com/matthiasdemuzere/w2w"
+
+  - type: article
+    authors:
+      - family-names: Demuzere
+        given-names: Matthias
+      - family-names: Kittner
+        given-names: Jonas
+      - family-names: Martilli
+        given-names: Alberto
+      - family-names: Mills
+        given-names: Gerald
+      - family-names: Moede
+        given-names: Christoph
+      - family-names: Stewart
+        given-names: Ian D.
+      - family-names: van Vliet
+        given-names: Johannes
+      - family-names: Bechtel
+        given-names: Benjamin
+    title: "A global map of local climate zones to support Earth system modelling and urban-scale environmental science"
+    year: 2022
+    journal: "Earth System Science Data"
+    volume: 14
+    pages: 3835-3873
+    doi: "10.5194/essd-14-3835-2022"
+    url: "https://lcz-generator.rub.de/global-lcz-map"
+
+  - type: dataset
+    title: "Copernicus DEM GLO-30"
+    year: 2024
+    url: "https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM"
+    doi: "10.5270/ESA-c5d3d65"
