@@ -60,16 +60,32 @@ or:
 
 or any other valid set of `geo_em.dXX.nc` files.
 
-## Spatial coverage
+## Spatial coverage and automatic LCZ fallback
 
-By default, an LCZ raster must completely cover each WRF domain.
+The supplied LCZ raster must completely cover every discovered WRF domain.
 
-A domain is processed only when:
+A domain is considered covered only when:
 
     LCZ extent >= WRF domain extent
 
-Partial LCZ coverage is not silently accepted because it can introduce
-edge effects and incomplete urban classification.
+Partial LCZ coverage is not silently accepted.
+
+If the supplied LCZ raster does not cover all discovered domains, the
+workflow can automatically obtain the official RUB Global LCZ Version 3
+Cloud-Optimized GeoTIFF and repeat the coverage check.
+
+The fallback source is:
+
+    https://lcz-generator.rub.de/cogs/lcz_filter_v3_cog.tif
+
+The supplied LCZ is always preferred when it already covers every domain.
+The fallback is used only when coverage is incomplete.
+
+If neither source covers every discovered domain, processing stops with an
+explicit error. The workflow never silently processes only a subset of
+domains.
+
+The number of domains is not hard-coded.
 
 ## W2W
 

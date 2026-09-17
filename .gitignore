@@ -35,3 +35,11 @@ config/local_*.yaml
 *.egg-info/
 dist/
 build/
+
+# Repository reproducibility sample data
+!sample_data/
+!sample_data/*.nc
+!sample_data/*.tif
+!sample_data/*.yaml
+!sample_data/SHA256SUMS
+!sample_data/README.md

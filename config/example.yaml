@@ -1,0 +1,19 @@
+# Domain-native LCZ-to-WRF preprocessing configuration
+
+domains:
+  discover: true
+  pattern: "geo_em.d*.nc"
+  require_full_lcz_coverage: true
+
+lcz:
+  supplied_path: "sample_data/lcz_filter_v3_sample.tif"
+
+  fallback:
+    enabled: true
+    version: "v3"
+    provider: "RUB Global LCZ Map"
+    url: "https://lcz-generator.rub.de/cogs/lcz_filter_v3_cog.tif"
+    cache_path: "data/cache/lcz_filter_v3_cog.tif"
+
+w2w:
+  version: "0.6.0"
