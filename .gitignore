@@ -1,0 +1,37 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+
+*.log
+*.tmp
+*.bak
+
+# Large geospatial / WRF products
+*.nc
+*.tif
+*.tiff
+*.grib
+*.grb
+*.grb2
+*.hgt
+
+# WRF/WPS generated files
+geo_em.d*.nc
+met_em.d*.nc
+FILE:*
+PFILE:*
+
+# Local data
+data/
+outputs/
+results/
+
+# Local production configuration
+config/local_*.yaml
+
+# Python build artifacts
+*.egg-info/
+dist/
+build/

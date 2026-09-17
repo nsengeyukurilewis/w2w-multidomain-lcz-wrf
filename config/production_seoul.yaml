@@ -1,0 +1,53 @@
+project:
+  name: "Seoul WRF multi-domain LCZ preprocessing"
+  description: >
+    Domain-native multi-domain LCZ preprocessing using W2W 0.6.0.
+
+software:
+  w2w_version: "0.6.0"
+
+domains:
+  discover: true
+  pattern: "geo_em.d*.nc"
+  require_full_lcz_coverage: true
+
+lcz:
+  name: "LCZ Version 3"
+  format: "GeoTIFF"
+  source_type: "pinned"
+  path: "/PATH/TO/lcz_filter_v3_cog.tif"
+  band: 0
+  crs: "EPSG:4326"
+
+wrf:
+  geo_em_directory: "/PATH/TO/geo_em"
+  latitude_variable: "XLAT_M"
+  longitude_variable: "XLONG_M"
+
+topography:
+  name: "Copernicus GLO-30 DSM"
+  resolution: "1 arc-second"
+  description: "Production WRF HGT_M source"
+
+production_case:
+  region: "Seoul metropolitan region"
+  domains:
+    d01:
+      dx_m: 9000
+    d02:
+      dx_m: 3000
+    d03:
+      dx_m: 1000
+    d04:
+      dx_m: 100
+
+provenance:
+  record:
+    - source
+    - version
+    - acquisition_date
+    - processing_date
+    - crs
+    - resolution
+    - checksum
+    - license

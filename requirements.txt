@@ -1,0 +1,12 @@
+numpy
+scipy
+pandas
+xarray
+netCDF4
+h5netcdf
+rasterio
+rioxarray
+tqdm
+pyyaml
+w2w==0.6.0
+pytest
