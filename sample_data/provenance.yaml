@@ -1,0 +1,48 @@
+dataset:
+  name: "W2W multi-domain LCZ-to-WRF sample dataset"
+  purpose: "Small reproducibility dataset for testing domain-native multi-domain preprocessing"
+
+sources:
+  wrf:
+    dataset: "WRF geo_em"
+    source_files:
+      - "geo_em.d03.nc"
+      - "geo_em.d04.nc"
+    use: "Reduced spatial samples only"
+    production_path: "Genuine_COP30_WPS_20260917"
+
+  lcz:
+    dataset: "LCZ Version 3"
+    format: "GeoTIFF"
+    crs: "EPSG:4326"
+    source_type: "Pinned LCZ Version 3 source"
+    use: "Reduced spatial sample only"
+
+software:
+  w2w: "0.6.0"
+
+sample:
+  domains:
+    - "d01"
+    - "d02"
+  domain_count_is_fixed: false
+  full_lcz_coverage_required: true
+
+topography:
+  production_source: "Copernicus GLO-30 DSM"
+  included_in_sample: false
+  note: >
+    The sample repository tests LCZ-to-WRF preprocessing. Full COP30
+    production topography is not redistributed.
+
+provenance_fields:
+  - dataset
+  - provider
+  - version
+  - source_url
+  - acquisition_date
+  - processing_date
+  - crs
+  - resolution
+  - license
+  - sha256
