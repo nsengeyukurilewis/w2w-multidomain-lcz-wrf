@@ -72,6 +72,26 @@ def test_all_domains_covered(tmp_path):
     assert report["missing_domains"] == []
 
 
+def test_larger_lcz_extent_is_valid(tmp_path):
+    """An LCZ raster may extend beyond the WRF domain boundaries."""
+    path = tmp_path / "lcz.tif"
+
+    # Deliberately much larger than both required WRF domains.
+    make_lcz(
+        path,
+        120.0,
+        32.0,
+        135.0,
+        43.0,
+    )
+
+    report = check_lcz_coverage(path, domains())
+
+    assert report["all_domains_covered"] is True
+    assert report["missing_domains"] == []
+    assert all(item["covered"] for item in report["domains"])
+
+
 def test_partial_coverage_is_detected(tmp_path):
     path = tmp_path / "lcz.tif"
 
