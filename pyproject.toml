@@ -18,7 +18,7 @@ dependencies = [
     "rioxarray",
     "tqdm",
     "pyyaml",
-    "w2w==0.6.0",
+    "w2w @ git+https://github.com/nsengeyukurilewis/w2w.git@7dccbe167b6859bbed833bc750ce104c8e9dd1a9",
 ]
 
 [project.optional-dependencies]
